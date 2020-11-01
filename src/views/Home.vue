@@ -34,8 +34,8 @@
           </div>
         </div>
       </div>
-      <div class="py-4 flex justify-between items-center text-white">
-        <div>
+      <div class="py-4 flex justify-center md:justify-between items-center text-white relative">
+        <div class="md:flex hidden">
           <img class="w-20" src="@/assets/icons/logo.svg" alt="">
         </div>
         <div class="flex items-center">
@@ -45,12 +45,19 @@
           <img v-else @click="camera = !camera" class="cursor-pointer w-12 mx-3 md:mx-6" src="@/assets/icons/video-off-grey.svg" alt="">
           <img class="cursor-pointer w-12" src="@/assets/icons/end-call.svg" alt="">
         </div>
-        <div class="flex items-center">
+        <div class="md:flex items-center hidden">
           <button @click="showBilling = !showBilling" class="bg-gray-500 capitalize text-xs text-black rounded-lg border border-black border-1 px-3 py-1 mr-6">start billing</button>
           <div class="flex items-center cursor-pointer">
             <img class="w-4 mr-3 fill-white" src="@/assets/icons/fullscreen.svg" alt="">
             <p class="text-xs">Exit Full Screen</p>
           </div>
+        </div>
+        <div class="absolute right-0">
+          <div v-if="toggleMenu" class="text-black bg-gray-100 rounded-md overflow-hidden absolute right-0 w-48 h-20" style="bottom:2rem">
+            <p @click="showBillingDialog" class="cursor-pointer text-gray-800 p-2 hover:bg-gray-200">Show Billing</p>
+            <p @click="toggleMenu = !toggleMenu" class="cursor-pointer text-gray-800 p-2 hover:bg-gray-200">Exit Full Screen</p>
+          </div>
+          <button @click="toggleMenu = !toggleMenu"><img src="@/assets/icons/more.svg" alt=""></button>
         </div>
       </div>
     </div>
@@ -71,6 +78,7 @@ export default {
   },
   data() {
     return {
+      toggleMenu: false,
       showBilling: false,
       moreInfo: true,
       mic: true,
@@ -78,6 +86,10 @@ export default {
     }
   },
   methods: {
+    showBillingDialog() {
+      this.showBilling = !this.showBilling;
+      this.toggleMenu = false;
+    }
   }
 }
 </script>
