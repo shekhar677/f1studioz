@@ -21638,6 +21638,40 @@ video {
           animation: bounce 1s infinite;
 }
 
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  font-family: 'Open Sans', sans-serif;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.box-adjust {
+  margin: -1rem -0.75rem;
+}
+
+.active-tab {
+  background: white;
+  border-top: 2px solid #ddd;
+  border-right: 2px solid #ddd;
+  border-left: 2px solid #ddd;
+  border-bottom: 2px solid transparent;
+}
+
+.inactive-tab {
+  background: white;
+  border-bottom: 2px solid #ddd;
+  border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-left: 2px solid transparent;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
