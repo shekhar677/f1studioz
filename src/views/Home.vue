@@ -71,7 +71,7 @@ export default {
   },
   data() {
     return {
-      showBilling: true,
+      showBilling: false,
       moreInfo: true,
       mic: true,
       camera: true,

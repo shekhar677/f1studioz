@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="mt-5" v-if="paymentMethod == 2">
-        <select class="w-full p-3 cursor-pointer shadow rounded-md">
+        <select class="w-full bg-white p-3 cursor-pointer shadow rounded-md">
           <option v-for="city in cities" :key="city" :value="city">{{ city }}</option>
         </select>
       </div>
